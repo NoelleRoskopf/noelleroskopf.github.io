@@ -3,94 +3,629 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Noelle Roskopf | Instructional Design Portfolio</title>
+<meta name="description" content="Instructional design and eLearning portfolio of Noelle Roskopf, featuring interactive workplace learning experiences developed in Articulate Rise 360.">
 
 <style>
+:root{
+  --blue:#0A66C2;
+  --blue-dark:#004182;
+  --navy:#17324d;
+  --navy-deep:#0f2d49;
+  --sky:#eaf3fb;
+  --background:#f5f7fa;
+  --white:#ffffff;
+  --text:#263238;
+  --muted:#5f6b76;
+  --border:#dfe7ee;
+  --shadow:0 10px 30px rgba(18,57,91,.10);
+  --shadow-large:0 18px 50px rgba(18,57,91,.14);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
-font-family:Arial,Helvetica,sans-serif;
-margin:0;
-background:#f5f7fa;
-color:#333;
-line-height:1.6;
+  font-family:Arial,Helvetica,sans-serif;
+  margin:0;
+  background:var(--background);
+  color:var(--text);
+  line-height:1.65;
+}
+
+img{
+  max-width:100%;
+}
+
+a{
+  color:inherit;
 }
 
 header{
-background:linear-gradient(135deg,#0A66C2,#004182);
-color:white;
-padding:80px 20px;
-text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.10),transparent 30%),
+    linear-gradient(135deg,var(--blue),var(--blue-dark));
+  color:white;
+  padding:78px 20px 70px;
+  text-align:center;
 }
 
 header h1{
-font-size:52px;
-margin-bottom:10px;
+  font-size:52px;
+  line-height:1.1;
+  margin:0 0 10px;
 }
 
-header p{
-font-size:22px;
-margin-bottom:25px;
+header .headline{
+  font-size:22px;
+  margin:0 0 16px;
+  font-weight:500;
 }
 
-.container{
-max-width:1050px;
-margin:auto;
-padding:40px 20px;
-}
-
-.card{
-background:white;
-padding:32px;
-border-radius:14px;
-box-shadow:0 6px 18px rgba(0,0,0,.08);
-margin-bottom:30px;
-}
-
-h2{
-color:#0A66C2;
-margin-top:0;
-}
-
-h3{
-margin-bottom:10px;
+.hero-summary{
+  max-width:760px;
+  margin:0 auto 24px;
+  font-size:17px;
+  line-height:1.7;
+  opacity:.96;
 }
 
 .button{
-display:inline-block;
-padding:14px 26px;
-background:#0A66C2;
-color:white;
-text-decoration:none;
-border-radius:8px;
-margin-top:15px;
-margin-right:10px;
-font-weight:bold;
+  display:inline-block;
+  padding:14px 25px;
+  background:var(--blue);
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  margin:10px 8px 0 0;
+  font-weight:bold;
+  border:2px solid transparent;
+  transition:transform .2s ease,background .2s ease,box-shadow .2s ease;
 }
 
 .button:hover{
-background:#004182;
+  background:var(--blue-dark);
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(10,102,194,.22);
 }
 
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:15px;
+.button.secondary{
+  background:white;
+  color:var(--blue-dark);
+  border-color:white;
 }
 
-.skill{
-background:#e8f1fb;
-color:#0A66C2;
-padding:10px 14px;
-border-radius:20px;
-font-weight:bold;
-font-size:14px;
+.button.secondary:hover{
+  background:#eef5fb;
+}
+
+.button.outline{
+  background:transparent;
+  color:var(--blue);
+  border-color:var(--blue);
+}
+
+.button.outline:hover{
+  background:var(--sky);
+}
+
+header .button.primary{
+  background:white;
+  color:var(--blue-dark);
+}
+
+header .button.primary:hover{
+  background:#eef5fb;
+}
+
+header .button.header-outline{
+  background:transparent;
+  color:white;
+  border-color:rgba(255,255,255,.9);
+}
+
+header .button.header-outline:hover{
+  background:rgba(255,255,255,.12);
+}
+
+.skills-strip{
+  background:white;
+  border-bottom:1px solid var(--border);
+}
+
+.skills-strip-inner{
+  max-width:1100px;
+  margin:auto;
+  padding:22px 20px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+
+.skill-pill{
+  background:var(--sky);
+  color:var(--blue-dark);
+  padding:9px 14px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:bold;
+  border:1px solid #d8e8f7;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:48px 20px 72px;
+}
+
+.card{
+  background:var(--white);
+  padding:34px;
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+  margin-bottom:34px;
+}
+
+h2{
+  color:var(--blue-dark);
+  margin:0 0 14px;
+  font-size:30px;
+}
+
+h3{
+  color:var(--navy);
+  margin:0 0 10px;
+  font-size:26px;
+  line-height:1.3;
+}
+
+h4{
+  color:var(--blue-dark);
+  margin:0 0 7px;
+  font-size:18px;
+}
+
+p{
+  margin:8px 0 14px;
+}
+
+.section-intro{
+  max-width:850px;
+  color:var(--muted);
+  margin-bottom:28px;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:28px;
+  align-items:start;
+}
+
+.about-highlight{
+  background:linear-gradient(135deg,#f2f8fd,#e8f2fb);
+  border:1px solid #d8e8f7;
+  border-radius:14px;
+  padding:22px;
+}
+
+.about-highlight strong{
+  color:var(--blue-dark);
+  display:block;
+  margin-bottom:8px;
+}
+
+.project-card{
+  background:white;
+  border-radius:18px;
+  box-shadow:var(--shadow-large);
+  border:1px solid var(--border);
+  overflow:hidden;
+  margin-bottom:42px;
+}
+
+.project-visual{
+  position:relative;
+  min-height:300px;
+  background:linear-gradient(135deg,#0f3150,#0A66C2);
+  overflow:hidden;
+}
+
+.project-visual.communication{
+  background:linear-gradient(135deg,#234b68,#2f7db6);
+}
+
+.preview-image{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  display:block;
+}
+
+.preview-fallback{
+  min-height:300px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:35px;
+  color:white;
+  text-align:left;
+}
+
+.preview-window{
+  width:min(820px,92%);
+  background:white;
+  border-radius:14px;
+  box-shadow:0 18px 45px rgba(0,0,0,.28);
+  overflow:hidden;
+  color:var(--text);
+}
+
+.preview-toolbar{
+  height:34px;
+  background:#edf1f5;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:0 12px;
+}
+
+.preview-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#b9c4ce;
+}
+
+.preview-content{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  min-height:205px;
+}
+
+.preview-sidebar{
+  background:#f5f8fb;
+  padding:22px;
+  border-right:1px solid var(--border);
+}
+
+.preview-sidebar div{
+  height:10px;
+  background:#d9e5ef;
+  border-radius:5px;
+  margin-bottom:13px;
+}
+
+.preview-sidebar div:nth-child(2){width:78%}
+.preview-sidebar div:nth-child(3){width:88%}
+.preview-sidebar div:nth-child(4){width:65%}
+
+.preview-main{
+  padding:28px;
+}
+
+.preview-main .tag{
+  display:inline-flex;
+  align-items:center;
+  white-space:nowrap;
+  margin:4px 6px 4px 0;
+}
+
+.preview-kicker{
+  color:var(--blue);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+
+.preview-main h3{
+  margin-top:8px;
+  font-size:27px;
+}
+
+.preview-main p{
+  color:var(--muted);
+}
+
+.project-header{
+  padding:34px 36px 30px;
+  background:white;
+  border-bottom:1px solid var(--border);
+}
+
+.project-label{
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin-bottom:8px;
+}
+
+.project-header h3{
+  font-size:33px;
+  margin-bottom:10px;
+}
+
+.project-header p{
+  max-width:840px;
+  font-size:17px;
+  margin:0;
+  color:var(--muted);
+}
+
+.project-body{
+  padding:34px 36px 38px;
+}
+
+.project-meta{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  padding-bottom:24px;
+  margin-bottom:28px;
+  border-bottom:1px solid var(--border);
+}
+
+.meta-item{
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:17px;
+}
+
+.meta-icon{
+  font-size:22px;
+  margin-bottom:6px;
+}
+
+.meta-item strong{
+  display:block;
+  color:var(--blue-dark);
+  margin-bottom:4px;
+}
+
+.case-study-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  margin-bottom:26px;
+}
+
+.case-study-box{
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:22px;
+}
+
+.case-study-box p{
+  margin-bottom:0;
+}
+
+.case-study-box ul{
+  margin:8px 0 0;
+  padding-left:20px;
+}
+
+.case-study-box li{
+  margin-bottom:5px;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:13px 0 21px;
+}
+
+.tag{
+  background:var(--sky);
+  color:var(--blue);
+  padding:9px 14px;
+  border-radius:20px;
+  font-weight:bold;
+  font-size:14px;
+}
+
+.project-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:8px;
+}
+
+.case-study-anchor{
+  scroll-margin-top:24px;
+}
+
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:22px;
+}
+
+.tool-group{
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:22px;
+}
+
+.tool-group h3{
+  font-size:19px;
+  margin-bottom:12px;
+}
+
+.tool-group ul{
+  margin:0;
+  padding-left:20px;
+}
+
+.tool-group li{
+  margin-bottom:5px;
+}
+
+.connect-card{
+  text-align:center;
+  padding:46px 30px;
+}
+
+.note-card{
+  background:#eef6fd;
+  border:1px solid #cfe3f5;
+  border-radius:14px;
+  padding:22px;
+  margin-top:20px;
 }
 
 footer{
-text-align:center;
-padding:30px;
-color:#777;
+  text-align:center;
+  padding:30px;
+  color:#777;
 }
+
+@media(max-width:850px){
+  .about-grid,
+  .project-meta,
+  .case-study-grid,
+  .tools-grid,
+  .preview-content{
+    grid-template-columns:1fr;
+  }
+
+  .preview-sidebar{
+    display:none;
+  }
+}
+
+@media(max-width:700px){
+  header{
+    padding-top:58px;
+  }
+
+  header h1{
+    font-size:40px;
+  }
+
+  header .headline{
+    font-size:18px;
+  }
+
+  .project-header h3{
+    font-size:27px;
+  }
+
+  .project-body,
+  .project-header,
+  .card{
+    padding:25px;
+  }
+
+  .project-visual,
+  .preview-fallback,
+  .preview-image{
+    min-height:240px;
+    height:240px;
+  }
+
+  .preview-main{
+    padding:22px;
+  }
+
+  .preview-main h3{
+    font-size:22px;
+  }
+}
+
+.connect-card {
+  text-align: center;
+  padding: 48px 32px;
+}
+
+.connect-card h2 {
+  margin-bottom: 18px;
+}
+
+.connect-card > p {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.connect-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+}
+
+.button-secondary:hover {
+  background: var(--blue);
+  color: white;
+}
+
+.contact-email {
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.contact-email a {
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.closing-message {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+@media (max-width:700px){
+
+.connect-card{
+padding:36px 20px;
+}
+
+.connect-buttons{
+flex-direction:column;
+}
+
+.connect-buttons .button{
+width:100%;
+max-width:260px;
+}
+
+}
+
+</style>
 </style>
 </head>
 
@@ -99,7 +634,7 @@ color:#777;
 <header>
 <h1>Noelle Roskopf</h1>
 
-  <img src="IMG_2857.png" alt="Noelle Roskopf"
+<img src="IMG_2857.png" alt="Noelle Roskopf"
 style="width:260px;
 height:260px;
 border-radius:50%;
@@ -109,82 +644,438 @@ border:6px solid white;
 margin:25px auto;
 display:block;
 box-shadow:0 10px 30px rgba(0,0,0,.25);">
-  
-  
-  <p>Instructional Designer • eLearning Developer • M.S. Curriculum & Instruction</p>
 
-<a class="button" href="#projects">View Portfolio</a>
-<a class="button" href="https://www.linkedin.com/in/noelle-roskopf" target="_blank">View LinkedIn</a>
+<p class="headline">Instructional Designer • eLearning Developer • M.S. Curriculum & Instruction</p>
+
+<div class="hero-summary">
+I design engaging digital learning experiences that help employees build practical workplace skills through clear, interactive, and learner-centered training.
+</div>
+
+<a class="button primary" href="#projects">View Featured Projects</a>
+<a class="button header-outline" href="https://www.linkedin.com/in/noelle-roskopf" target="_blank" rel="noopener">View LinkedIn</a>
 </header>
 
-<div class="container">
+<section class="skills-strip" aria-label="Featured skills">
+<div class="skills-strip-inner">
+<span class="skill-pill">Articulate Rise 360</span>
+<span class="skill-pill">Instructional Design</span>
+<span class="skill-pill">Adult Learning</span>
+<span class="skill-pill">eLearning Development</span>
+<span class="skill-pill">Scenario-Based Learning</span>
+<span class="skill-pill">Curriculum Design</span>
+</div>
+</section>
 
-<div class="card">
+<main class="container">
+
+<section class="card">
+<div class="about-grid">
+<div>
 <h2>About Me</h2>
+
 <p>
-I am an instructional designer and eLearning developer with a Master of Science in Curriculum & Instruction and a background in education, curriculum design, and learner-centered teaching. I am transitioning into instructional design and eLearning development by creating interactive training experiences that apply adult learning principles, scenario-based learning, clear learning objectives, and engaging visual design.
+I design practical digital learning experiences that help employees build skills they can use immediately. With a Master of Science in Curriculum & Instruction and a background in education, I combine instructional design strategy, visual communication, and eLearning development to create training that is clear, engaging, and purposeful.
 </p>
+
 <p>
-My goal is to design meaningful learning experiences that help learners build confidence, apply new skills, and succeed in real-world workplace situations.
+My work is grounded in adult learning principles, scenario-based learning, focused objectives, meaningful practice, and feedback that supports real-world performance.
 </p>
 </div>
 
-<div class="card" id="projects">
-<h2>Featured Project</h2>
+<div class="about-highlight">
+<strong>What I bring</strong>
+A learner-centered mindset, curriculum expertise, strong written communication, and the ability to transform complex information into structured, approachable training.
+</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>Featured Projects</h2>
+
+<p class="section-intro">
+These case studies show how I identify a learning need, design an appropriate solution, develop interactive eLearning, and connect learning outcomes to workplace performance.
+</p>
+
+<article class="project-card" id="cybersecurity-project">
+
+<div class="project-visual">
+<img class="preview-image"
+src="cybersecurity-preview.png"
+alt="Preview of the Think Before You Click cybersecurity course"
+onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+<div class="preview-fallback" style="display:none;">
+<div class="preview-window">
+<div class="preview-toolbar">
+<span class="preview-dot"></span>
+<span class="preview-dot"></span>
+<span class="preview-dot"></span>
+</div>
+<div class="preview-content">
+<div class="preview-sidebar">
+<div></div><div></div><div></div><div></div>
+</div>
+<div class="preview-main">
+<div class="preview-kicker">Interactive Course Preview</div>
+<h3>Think Before You Click</h3>
+<p>Cybersecurity Awareness Challenge</p>
+<span class="tag">Phishing</span>
+<span class="tag">Decision-Making</span>
+<span class="tag">Immediate Feedback</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="project-header">
+<div class="project-label">Featured Project 01</div>
+
+<h3>Think Before You Click: Cybersecurity Awareness Challenge</h3>
+
+<p>
+An interactive cybersecurity awareness course that helps employees recognize common digital threats and make safer decisions in realistic workplace situations.
+</p>
+</div>
+
+<div class="project-body">
+
+<div class="project-meta">
+<div class="meta-item">
+<div class="meta-icon">👤</div>
+<strong>My Role</strong>
+Instructional Designer and eLearning Developer
+</div>
+
+<div class="meta-item">
+<div class="meta-icon">🎯</div>
+<strong>Audience</strong>
+Employees in a corporate workplace
+</div>
+
+<div class="meta-item">
+<div class="meta-icon">🖥️</div>
+<strong>Delivery</strong>
+Self-paced web-based training
+</div>
+</div>
+
+<div class="case-study-anchor" id="cybersecurity-case-study">
+
+<div class="case-study-grid">
+
+<div class="case-study-box">
+<h4>⚠️ The Challenge</h4>
+<p>
+Employees encounter phishing emails, unsafe links, suspicious attachments, and social engineering tactics. They need practical training that helps them recognize warning signs and respond appropriately.
+</p>
+</div>
+
+<div class="case-study-box">
+<h4>💡 The Solution</h4>
+<p>
+I created an interactive Articulate Rise 360 course that places learners in realistic workplace situations and asks them to evaluate threats, make decisions, and receive immediate feedback.
+</p>
+</div>
+
+<div class="case-study-box">
+<h4>🧠 Learning Strategy</h4>
+<p>
+The course uses scenario-based learning, retrieval practice, decision-making activities, knowledge checks, visual cues, and immediate feedback to reinforce safe behaviors.
+</p>
+</div>
+
+<div class="case-study-box">
+<h4>🎨 Design Decisions</h4>
+<p>
+Content is organized into short, focused sections to reduce cognitive load. Interactions are used intentionally to support application without overwhelming the learner.
+</p>
+</div>
+
+<div class="case-study-box">
+<h4>🎓 Learning Objectives</h4>
+<ul>
+<li>Recognize phishing and social engineering warning signs.</li>
+<li>Evaluate suspicious emails, links, and attachments.</li>
+<li>Choose an appropriate response to a potential threat.</li>
+</ul>
+</div>
+
+<div class="case-study-box">
+<h4>📈 Business Value</h4>
+<p>
+The course supports safer employee behavior, reduces avoidable security risks, and strengthens a culture of cybersecurity awareness.
+</p>
+</div>
+
+</div>
+
+<h4>🛠️ Tools Used</h4>
+<div class="tags">
+<span class="tag">Articulate Rise 360</span>
+<span class="tag">GitHub</span>
+<span class="tag">GitHub Pages</span>
+<span class="tag">Visual Design</span>
+</div>
+
+<h4>✅ Skills Demonstrated</h4>
+<div class="tags">
+<span class="tag">Instructional Design</span>
+<span class="tag">eLearning Development</span>
+<span class="tag">Adult Learning Theory</span>
+<span class="tag">Scenario-Based Learning</span>
+<span class="tag">Knowledge Checks</span>
+<span class="tag">Immediate Feedback</span>
+<span class="tag">Learning Objectives</span>
+</div>
+
+</div>
+
+<div class="project-actions">
+<a class="button outline" href="#cybersecurity-case-study">View Case Study</a>
+<a class="button" href="https://noelleroskopf.github.io/think-before-you-click-cybersecurity/" target="_blank" rel="noopener">Launch Course</a>
+</div>
+
+</div>
+</article>
+
+<article class="project-card" id="communication-project">
+
+<div class="project-visual communication">
+<img class="preview-image"
+src="communication-preview.png"
+alt="Preview of the Communicating Effectively in the Workplace course"
+onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+<div class="preview-fallback" style="display:none;">
+<div class="preview-window">
+<div class="preview-toolbar">
+<span class="preview-dot"></span>
+<span class="preview-dot"></span>
+<span class="preview-dot"></span>
+</div>
+<div class="preview-content">
+<div class="preview-sidebar">
+<div></div><div></div><div></div><div></div>
+</div>
+<div class="preview-main">
+<div class="preview-kicker">Interactive Course Preview</div>
+<h3>Communicating Effectively</h3>
+<p>Practical workplace communication skills</p>
+<span class="tag">Active Listening</span>
+<span class="tag">Professional Tone</span>
+<span class="tag">Workplace Scenarios</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="project-header">
+<div class="project-label">Featured Project 02</div>
 
 <h3>Communicating Effectively in the Workplace</h3>
 
 <p>
-An interactive eLearning course developed in Articulate Rise 360 to help learners strengthen workplace communication skills. This course includes learning objectives, interactive knowledge checks, accordion interactions, flashcards, scenario-based learning, and practical communication strategies.
+An interactive eLearning course that helps employees strengthen professional communication skills and apply effective strategies in workplace situations.
 </p>
-
-<p><strong>Skills demonstrated:</strong></p>
-
-<div class="skills">
-<span class="skill">Instructional Design</span>
-<span class="skill">Adult Learning Theory</span>
-<span class="skill">Articulate Rise 360</span>
-<span class="skill">Scenario-Based Learning</span>
-<span class="skill">Knowledge Checks</span>
-<span class="skill">Visual Design</span>
-<span class="skill">eLearning Development</span>
 </div>
 
-<a class="button" href="https://noelleroskopf.github.io/communicating-effectively-workplace/" target="_blank">
-View Course
-</a>
+<div class="project-body">
+
+<div class="project-meta">
+<div class="meta-item">
+<div class="meta-icon">👤</div>
+<strong>My Role</strong>
+Instructional Designer and eLearning Developer
 </div>
 
-<div class="card">
+<div class="meta-item">
+<div class="meta-icon">🎯</div>
+<strong>Audience</strong>
+Employees and emerging professionals
+</div>
+
+<div class="meta-item">
+<div class="meta-icon">🖥️</div>
+<strong>Delivery</strong>
+Self-paced web-based training
+</div>
+</div>
+
+<div class="case-study-anchor" id="communication-case-study">
+
+<div class="case-study-grid">
+
+<div class="case-study-box">
+<h4>⚠️ The Challenge</h4>
+<p>
+Workplace misunderstandings can result from unclear messages, poor channel selection, weak listening skills, and an inappropriate professional tone.
+</p>
+</div>
+
+<div class="case-study-box">
+<h4>💡 The Solution</h4>
+<p>
+I developed a structured Rise 360 course that teaches learners to select suitable communication channels, practice active listening, write professional emails, and communicate clearly.
+</p>
+</div>
+
+<div class="case-study-box">
+<h4>🧠 Learning Strategy</h4>
+<p>
+The course uses scenarios, examples and non-examples, flashcards, accordion interactions, knowledge checks, and reflection to support practical application.
+</p>
+</div>
+
+<div class="case-study-box">
+<h4>🎨 Design Decisions</h4>
+<p>
+Each lesson focuses on one core communication skill and builds toward workplace application. Interactions support engagement while keeping the learning objectives central.
+</p>
+</div>
+
+<div class="case-study-box">
+<h4>🎓 Learning Objectives</h4>
+<ul>
+<li>Select an appropriate communication channel.</li>
+<li>Apply active listening strategies.</li>
+<li>Use a clear and professional workplace tone.</li>
+</ul>
+</div>
+
+<div class="case-study-box">
+<h4>📈 Business Value</h4>
+<p>
+The course supports clearer communication, stronger teamwork, fewer misunderstandings, and more professional workplace interactions.
+</p>
+</div>
+
+</div>
+
+<h4>🛠️ Tools Used</h4>
+<div class="tags">
+<span class="tag">Articulate Rise 360</span>
+<span class="tag">GitHub</span>
+<span class="tag">GitHub Pages</span>
+<span class="tag">Visual Design</span>
+</div>
+
+<h4>✅ Skills Demonstrated</h4>
+<div class="tags">
+<span class="tag">Instructional Design</span>
+<span class="tag">eLearning Development</span>
+<span class="tag">Adult Learning Theory</span>
+<span class="tag">Scenario-Based Learning</span>
+<span class="tag">Knowledge Checks</span>
+<span class="tag">Professional Communication</span>
+<span class="tag">Learner Engagement</span>
+</div>
+
+</div>
+
+<div class="project-actions">
+<a class="button outline" href="#communication-case-study">View Case Study</a>
+<a class="button" href="https://noelleroskopf.github.io/communicating-effectively-workplace/" target="_blank" rel="noopener">Launch Course</a>
+</div>
+
+</div>
+</article>
+
+</section>
+
+<section class="card">
 <h2>Skills & Tools</h2>
 
-<div class="skills">
-<span class="skill">Articulate Rise 360</span>
-<span class="skill">Instructional Design</span>
-<span class="skill">eLearning Development</span>
-<span class="skill">Curriculum Design</span>
-<span class="skill">Adult Learning</span>
-<span class="skill">Scenario-Based Learning</span>
-<span class="skill">Learning Objectives</span>
-<span class="skill">Knowledge Checks</span>
-<span class="skill">Visual Design</span>
-<span class="skill">Canva</span>
-<span class="skill">PowerPoint</span>
-</div>
-</div>
-
-<div class="card">
-<h2>Connect With Me</h2>
-<p>
-I am excited to continue building my instructional design portfolio and connect with learning and development professionals.
+<p class="section-intro">
+A combination of instructional design knowledge, curriculum expertise, eLearning development, and visual communication skills.
 </p>
 
-<a class="button" href="https://www.linkedin.com/in/noelle-roskopf" target="_blank">
-View LinkedIn
+<div class="tools-grid">
+
+<div class="tool-group">
+<h3>🖥️ Authoring & Technology</h3>
+<ul>
+<li>Articulate Rise 360</li>
+<li>GitHub and GitHub Pages</li>
+<li>Canvas LMS</li>
+<li>Google Workspace</li>
+</ul>
+</div>
+
+<div class="tool-group">
+<h3>🧠 Instructional Design</h3>
+<ul>
+<li>Adult Learning Theory</li>
+<li>Scenario-Based Learning</li>
+<li>Learning Objectives</li>
+<li>Knowledge Checks</li>
+<li>Assessment and Evaluation</li>
+</ul>
+</div>
+
+<div class="tool-group">
+<h3>🎨 Design & Development</h3>
+<ul>
+<li>eLearning Development</li>
+<li>Curriculum Design</li>
+<li>Visual Design</li>
+<li>Canva</li>
+<li>PowerPoint</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section class="card connect-card">
+  <h2>Connect With Me</h2>
+
+  <p>
+    I'm actively seeking opportunities in instructional design,
+    learning experience design, and learning and development.
+    I would love to connect and discuss how I can help create
+    engaging, learner-centered learning experiences.
+  </p>
+
+  <div class="connect-buttons">
+    <a
+      class="button"
+      href="https://www.linkedin.com/in/noelle-roskopf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View LinkedIn
+    </a>
+
+    <a
+  class="button button-secondary"
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=noelleroskopf@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Email Me
 </a>
 </div>
 
-</div>
+<p class="contact-email">
+  <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=noelleroskopf@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    noelleroskopf@gmail.com
+  </a>
+</p>
+
+<p class="closing-message">
+  Thank you for visiting my portfolio. I would welcome the opportunity
+  to contribute my creativity, education experience, and passion for
+  meaningful learning to your team.
+</p>
+</section>
+
+</main>
 
 <footer>
 © 2026 Noelle Roskopf
