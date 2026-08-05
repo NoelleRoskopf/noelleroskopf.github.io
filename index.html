@@ -249,6 +249,22 @@ p{
   object-fit:cover;
   display:block;
 }
+.project-visual.cybersecurity{
+    background:linear-gradient(135deg,var(--navy),var(--blue));
+    padding:38px 28px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.project-visual.cybersecurity .preview-image{
+    display:block;
+    width:min(820px,92%);
+    height:auto;
+    object-fit:contain;
+    border-radius:14px;
+    box-shadow:0 18px 45px rgba(0,0,0,.28);
+}
 
 .preview-fallback{
   min-height:300px;
@@ -698,7 +714,7 @@ These case studies show how I identify a learning need, design an appropriate so
 
 <article class="project-card" id="cybersecurity-project">
 
-<div class="project-visual">
+<div class="project-visual cybersecurity">
 <img class="preview-image"
 src="cybersecurity-preview.png"
 alt="Preview of the Think Before You Click cybersecurity course"
