@@ -240,7 +240,19 @@ p{
 }
 
 .project-visual.communication{
-  background:linear-gradient(135deg,#234b68,#2f7db6);
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  padding:38px 28px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.project-visual.communication .preview-image{
+  display:block;
+  width:min(680px,78%);
+  height:auto;
+  object-fit:contain;
+  border-radius:14px;
+  box-shadow:0 18px 45px rgba(0,0,0,.28);
 }
 
 .preview-image{
